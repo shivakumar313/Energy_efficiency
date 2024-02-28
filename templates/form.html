@@ -1,0 +1,43 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Heating and Cooling Load Prediction</h1>
+   
+        <!-- Form for Predicting Heating Load -->
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+         <input type="text" name="Relative Compactness" placeholder="Relative Compactness" required="required" /><br>
+         <input type="text" name="Surface Area" placeholder="Surface Area" required="required" /><br>
+         <input type="text" name="Wall Area" placeholder="Wall Area" required="required" /><br>
+         <input type="text" name="Roof Area" placeholder="Roof Area" required="required" /><br>
+         <input type="text" name="Overall Height" placeholder="Overall Height" required="required" /><br>
+         <input type="text" name="Orientation" placeholder="Orientation" required="required" /><br>
+         <input type="text" name="Glazing Area" placeholder="Glazing Area" required="required" /><br>
+         <input type="text" name="Glazing Area Distribution" placeholder="Glazing Area Distribution" required="required" /><br>
+         <button type="submit" class="btn btn-primary btn-block btn-large">Predict Heating Load</button>
+       </form>
+
+       <!-- Form for Predicting Cooling Load -->
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+         <input type="text" name="Relative Compactness" placeholder="Relative Compactness" required="required" /><br>
+         <input type="text" name="Surface Area" placeholder="Surface Area" required="required" /><br>
+         <input type="text" name="Wall Area" placeholder="Wall Area" required="required" /><br>
+         <input type="text" name="Roof Area" placeholder="Roof Area" required="required" /><br>
+         <input type="text" name="Overall Height" placeholder="Overall Height" required="required" /><br>
+         <input type="text" name="Orientation" placeholder="Orientation" required="required" /><br>
+         <input type="text" name="Glazing Area" placeholder="Glazing Area" required="required" /><br>
+         <input type="text" name="Glazing Area Distribution" placeholder="Glazing Area Distribution" required="required" /><br>
+         <button type="submit" class="btn btn-primary btn-block btn-large">Predict Cooling Load</button>
+       </form>
+    </div>
+
+    <!-- Displaying Results -->
+    <h2>
+       {% if result1 is defined %}
+       The heating load is {{result1}}
+       {% endif %}
+       {% if result2 is defined %}
+       The cooling load is {{result2}}
+       {% endif %}
+    </h2>
+</body>
+</html>
